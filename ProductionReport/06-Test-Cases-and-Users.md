@@ -89,7 +89,7 @@ Result words:
 ### 2.1 RKAP / WPNB
 | # | Given | When | Then | Result |
 |---|---|---|---|---|
-| T44 | – | `GET /entities/phss`, `/entities/pep` | PHSS areas, PEP fields, no WF | Unit test (`Entities_PhssAreasAndPepFields_WithoutWaterFlood`) |
+| T44 | WF rows inactive in the master data | `GET /entities/phss`, `/entities/pep` | active PHSS areas, active PEP fields (no WF) | Unit test (`Entities_PhssAreasAndPepFields_WithoutWaterFlood`) |
 | T45 | a line RKAP 2099 PHSS | create the same key again | a new line; list shows the newest first | Unit test (`Create_SameKeyTwice_AddsNewLine_NewestFirst`); Pass (#1512 curl) |
 | T46 | – | `oil` with 11 values, or a negative value | 400 "… must have 12 values (Jan..Dec)" / "… must be a number >= 0" | Unit test (`Create_BadMonths_Rejected`) |
 | T47 | – | submit with some areas missing | 400 "rows must include every PHSS area: missing …"; a draft with some rows = 200 | Unit test (`Submit_WithoutEveryArea_Rejected_DraftMayBePartial`); Pass (#1512 curl #16–#21) |

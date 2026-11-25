@@ -76,7 +76,7 @@ Prod does not run EF migrations. Each script is written by hand in the Google Do
 ## 6. Release steps (each release)
 
 1. Ask the BE lead which release branch to use for Sprint 3. Other people already made one: `release/sprint3-yosia` (Gain Report).
-2. Make a branch from that release (`git switch --no-track -c feat/release-sprint3-sync-arya origin/<release>`).
+2. Make a branch from that release (`git switch --no-track -c feat/release-sprint3-sync-production-report origin/<release>`).
 3. Cherry-pick the merge commits in merge order (`git cherry-pick -m 1 -x <merge>`):
    - `88945f92` (#1462)
    - `291926eb` (#1459)

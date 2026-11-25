@@ -26,7 +26,7 @@ Words: see the word list at the top of `01-Decision-Log.md`.
 ### A. Input Target rules
 
 **G1. Can every RKAP / WPNB line be edited, or only the newest version?**
-- **Why we ask:** the Product Owner said on 19 Nov "only the newest version can be edited" (D19). The code lets every line be edited and the response has no `version` / `is_latest` (D23, Arya 22 Nov). Arya asked the Product Owner to write the Q&A into the PRD, so QA will test this rule.
+- **Why we ask:** the Product Owner said on 19 Nov "only the newest version can be edited" (D19). The code lets every line be edited and the response has no `version` / `is_latest` (D23, user 22 Nov). The user asked the Product Owner to write the Q&A into the PRD, so QA will test this rule.
 - **Proposal:** follow the PRD when it is written. If "newest only" stays: add `version` and `is_latest` to the list / detail response and return 400 on `POST /rkap-wpnb/{id}/update` for an older version.
 
 **G2. Who can edit Input Target: by department only, or also by position?**
@@ -57,7 +57,7 @@ Words: see the word list at the top of `01-Decision-Log.md`.
 ### B. Report rules
 
 **G6. Chart granularity: PRD says daily / monthly / yearly; we send daily.**
-- **Why we ask:** the PRD (18 Nov tab) still says < 30 days per day, ≥ 30 days per month, ≥ 1 year per year. QA point P2 asks for a monthly axis from 30 days. Arya decided daily for every range (D34). The Product Owner said on 19 Nov "1Y per month, follow the Figma".
+- **Why we ask:** the PRD (18 Nov tab) still says < 30 days per day, ≥ 30 days per month, ≥ 1 year per year. QA point P2 asks for a monthly axis from 30 days. The user decided daily for every range (D34). The Product Owner said on 19 Nov "1Y per month, follow the Figma".
 - **Proposal:** ask the Product Owner to update the PRD to "daily", or FE groups the daily points per month for the axis. If BE must group: the monthly value of a rate (BOPD) should be the **average** per day, not the sum (the Gain Report section of the PRD says the same).
 
 **G7. Is the comparison period chosen by the user?**

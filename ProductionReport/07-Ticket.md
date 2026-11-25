@@ -1,6 +1,6 @@
 # Production Report: tickets (business logic only)
 
-Made on 25 Nov from `03-Endpoint-Plan.md` and the Jira tickets of Sprint 3 (Arya).
+Made on 25 Nov from `03-Endpoint-Plan.md` and the Jira tickets of Sprint 3.
 Scope:
 - Only the business logic of each endpoint: rules, checks, results.
 - Not here: FE, release steps, DDL for prod. See `05-Production-Checklist.md`.
@@ -140,7 +140,7 @@ Test result: `06` T27, T29 (PEP gas 17–23 Nov). Same PRs as PROD-T04.
 ### PROD-T06: Input Target, RKAP / WPNB manual input
 `GET /production-report/input-target/entities/{phss|pep}`, `GET /rkap-wpnb`, `GET /rkap-wpnb/{id}`, `POST /rkap-wpnb`, `POST /rkap-wpnb/{id}/update`
 - Access: view = Production Operations in the active departments (a Senior Manager views); write = own department Production Operations. Else 403.
-- Grid rows (`entities`): PHSS areas / PEP fields, active, no WF.
+- Grid rows (`entities`): active PHSS areas / PEP fields from the catalog. There is no WF filter in the code; the WF rows are left out because they are inactive in the master data (D29).
 - Body: `target_year` (2000–2100), `type` (RKAP / WPNB), `working_area` (phss / pep), `status` (draft / submitted), `rows[{ name, oil[12], gas[12] }]`.
 - Rows:
   - at least 1, at most 200;
