@@ -1,4 +1,4 @@
-# phantomdocs (Arya)
+# phantomdocs
 
 Feature docs for Phantom (PHI), backend side. Same layout as `mnhafid/phantomdocs`.
 
